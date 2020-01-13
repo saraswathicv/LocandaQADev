@@ -1,0 +1,7 @@
+#Make sure to install Tomcat server 7 and Java 1.7 in target machine and update the Startup script and InstallJavaandTomcat accordingly
+
+cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
+rm -rf /usr/local/apache-tomcat-7.0.94/webapps/locanda*
+cp Locanda_target/*.war /usr/local/apache-tomcat-7.0.94/webapps/Locanda.war
+cp context.xml /usr/local/apache-tomcat-7.0.94/webapps/manager/META-INF
+cp tomcat-users.xml /usr/local/apache-tomcat-7.0.94/conf

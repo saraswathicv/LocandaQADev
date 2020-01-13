@@ -1,0 +1,11 @@
+#Thu Jun 09 16:53:16 CEST 2011
+DELEGATES_PREFERENCE=delegateValidatorList
+USER_BUILD_PREFERENCE=enabledBuildValidatorListorg.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;
+USER_MANUAL_PREFERENCE=enabledManualValidatorListorg.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;
+USER_PREFERENCE=overrideGlobalPreferencesfalse
+eclipse.preferences.version=1
+override=false
+suspend=false
+vals/org.eclipse.php.core.org.eclipse.php.core.PHPTaskValidator/global=FF01
+vals/org.eclipse.php.ui.HTMLValidatorForPHP/global=FF01
+vf.version=3

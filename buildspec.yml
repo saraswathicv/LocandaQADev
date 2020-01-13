@@ -1,0 +1,45 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  #install:
+     #runtime-versions:
+      # - command
+      # - command
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+       - mvn package
+      #- tar -cvf maven-web-application.tar target/maven-web-application.war appspec.yml
+      # - command
+  #post_build:
+    #commands:
+      # - command
+      # - command
+artifacts:
+  files:
+      - 'appspec.yml'
+      - 'Locanda_target/Locanda*.war'
+      - 'Scripts/StartApplication'
+      - 'Scripts/InstallJavaandTomcat'
+      - 'context.xml'
+      - 'tomcat-users.xml'
+      #- 'Dockerfile'
+      #- 'imagedefinitions.json'
+      - '.aws/config'
+      - '.aws/credentials'
+  name: maven-$(date +%Y-%m-%d)
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths

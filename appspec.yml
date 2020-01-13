@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /tmp/cicd
+hooks:
+  BeforeInstall:
+    - location: Scripts/InstallJavaandTomcat
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: Scripts/StartApplication
+      timeout: 300
+      runas: root
+

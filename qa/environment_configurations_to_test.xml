@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Environment config tsts" parallel="tests"
+	thread-count="10">
+
+	<listeners>
+		<listener class-name="selenium_tests.Listeners"></listener>
+	</listeners>
+
+
+<!-- ===== TEST BROWSERS IN PARALLEL  ========================================= -->
+
+
+	
+	<test name="windows chrome - CreateAccount feature">
+    <parameter name="tags" value="@CreateNewAccount,@UserAlreadyRegistered" />
+ 	<parameter name="operating_system" value="Linux" />
+    <parameter name="browser" value="chrome" />
+    <classes>
+        <class name="selenium_tests.Runner" />
+    </classes>
+</test>
+
+	<test name="windows chrome - LoginFailure feature">
+	<parameter name="tags" value="@loginWthInvalidCredentails" />
+		<parameter name="operating_system" value="Linux" />
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="selenium_tests.Runner" />
+		</classes>
+	</test>
+	
+
+	<!-- <test name="windows firefox - no tags (all features)">
+		<parameter name="operating_system" value="windows" />
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="selenium_tests.Runner" />
+		</classes>
+	</test>
+
+	<test name="windows edge - no tags (all features)">
+		<parameter name="operating_system" value="windows" />
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="selenium_tests.Runner" />
+		</classes>
+	</test> -->
+	
+	
+<!-- ===== TEST FEATURES IN PARALLEL  ========================================= -->
+
+<!-- 	<test name="Product feature"> -->
+<!-- 		<parameter name="tags" value="@Product" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+
+<!-- 	<test name="Homepage feature"> -->
+<!-- 		<parameter name="tags" value="@Homepage" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test>	 -->
+
+<!-- 	<test name="Basket feature"> -->
+<!-- 		<parameter name="tags" value="@Basket" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test>	 -->
+	
+<!-- 	<test name="CategorySearch feature"> -->
+<!-- 		<parameter name="tags" value="@CategorySearch" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test>		 -->
+	
+	
+<!-- ===== RETEST ========================================= -->	
+	
+<!-- 	<test name="windows chrome - just retest"> -->
+<!-- 		<parameter name="tags" value="@retest" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test>		 -->
+	
+	
+<!-- 	<test name="windows edge - just retest"> -->
+<!-- 		<parameter name="tags" value="@retest" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="edge" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test>			 -->
+	
+<!-- 	<test name="windows firefox - just retest"> -->
+<!-- 		<parameter name="tags" value="@retest" /> -->
+<!-- 		<parameter name="operating_system" value="windows" /> -->
+<!-- 		<parameter name="browser" value="firefox" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="selenium_tests.Runner" /> -->
+<!-- 		</classes> -->
+<!-- 	</test>		 -->
+	
+
+</suite> 
+
+

@@ -1,0 +1,41 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  pre_build:
+    commands:
+      - apt-get update -y && apt-get install awscli -y
+      - cp -r .aws $HOME
+  build:
+    commands:
+      - aws ecr get-login --no-include-email --region ap-southeast-1 > aws_ecr_credentials.sh
+      - chmod ugo+x aws_ecr_credentials.sh
+      - ./aws_ecr_credentials.sh
+      - echo Build started on `date`
+      - echo Building the Docker image...   
+  #    - apt-get install openjdk-8-jdk -y
+   #   - apt install maven -y
+    #  - export MAVEN_HOME=/usr/share/maven/
+     # - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+      # - export PATH=$PATH:$MAVEN_HOMNE/bin:$JAVA_HOME/bin
+      #- source aws_ecr_credentials.sh
+      #- mvn package
+      - docker build -t cloud-migration-studio:latest .
+      - docker tag cloud-migration-studio:latest 929496962863.dkr.ecr.ap-southeast-1.amazonaws.com/cloud-migration-studio:latest      
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 929496962863.dkr.ecr.ap-southeast-1.amazonaws.com/cloud-migration-studio:latest
+artifacts:
+  files:
+      - 'target/maven-web-application.war'
+      - 'imagedefinitions.json'
+  name: maven-web-application
