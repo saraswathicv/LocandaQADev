@@ -42,4 +42,3 @@ Starting from v0.4, you can set for each booking, at the check-in, each person h
 
 Have fun with Locanda!
 
-updated
