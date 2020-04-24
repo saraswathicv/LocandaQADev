@@ -1,4 +1,4 @@
-package testservice;
+package test.java.testservice;
 import java.util.Date;
 import java.util.List;
 

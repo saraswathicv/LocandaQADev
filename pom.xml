@@ -30,7 +30,33 @@
 			</dependencies>
 		</profile>
 	</profiles>
+<pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
 
+<repositories>
+  <!-- Copy this section from the Maven section of the "Connect to Feed" dialog -->
+  <repository>
+    <id>central</id>
+    <name>Central Repository</name>
+    <url>https://repo.maven.apache.org/maven2</url>
+    <layout>default</layout>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+  </repositories>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<directory>${basedir}/${project.name}_target</directory>

@@ -1,4 +1,4 @@
-package testservice;
+package test.java.testservice;
 
 import static org.junit.Assert.*;
 
